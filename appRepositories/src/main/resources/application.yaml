@@ -1,3 +1,5 @@
 spring:
   application:
     name: appRepositories
+  repolocation:
+    url: D:/java files/-web-/appRepositories/storage/

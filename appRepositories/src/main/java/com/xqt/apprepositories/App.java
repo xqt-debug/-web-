@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class App {
-    private Long id;
-    private String name;
-    private String description;
-    private String url;
+    private final Long id;
+    private final String name;
+    private final String description;
+    private final String url;
 }

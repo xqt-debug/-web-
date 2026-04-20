@@ -1,0 +1,17 @@
+<!DOCTYPE html >
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>AppRepostories</title>
+</head>
+<body>
+    <div class = "header">
+        <h1>AppRepositories</h1>
+    </div>
+    <ul>
+        <li th:each="app:${apps}"><a th:href="${app.url}" th:text="${app.name}" th:download="${app.name}">Repositories</a></li>
+    </ul>
+
+</body>
+</html>
