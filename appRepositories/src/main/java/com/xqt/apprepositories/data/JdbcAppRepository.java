@@ -34,4 +34,22 @@ public class JdbcAppRepository {
                 }
         );
     }
+
+    public Iterable<App> findByName(String name) {
+        String searchName = "%"+name+"%";
+        return jdbcTemplate.query(
+                "select id, name, description from App where name ILIKE ? " +
+                        "OR SOUNDEX(name) = SOUNDEX(?)" +
+                        "OR DIFFERENCE(name, ?) >= 2",
+                (rs, rowNum) -> {
+                    return new App(
+                            rs.getLong("id"),
+                            rs.getString("name"),
+                            rs.getString("description"),
+                            "/download/"+rs.getString("name")
+                    );
+                },
+                searchName, searchName, searchName
+        );
+    }
 }

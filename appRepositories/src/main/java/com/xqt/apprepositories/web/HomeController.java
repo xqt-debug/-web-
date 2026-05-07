@@ -5,8 +5,7 @@ import com.xqt.apprepositories.data.JdbcAppRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,5 +29,12 @@ class HomeController {
     public void app(Model model) {
         List<App> apps = (List<App>) appReposity.findAll();
         model.addAttribute("apps", apps);
+    }
+
+    @GetMapping("/search")
+    public String search(@RequestParam("searchName") String searchName, Model model) {
+        List<App> apps = (List<App>) appReposity.findByName(searchName);
+        model.addAttribute("apps", apps);
+        return "home";
     }
 }

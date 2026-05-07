@@ -1,0 +1,137 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6; /* 浅灰色背景，减少视觉疲劳 */
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* 页眉样式 */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 20px 0;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.header h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+}
+
+/* 列表容器：移除默认点状样式并改为网格布局 */
+ul {
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto; /* 居中显示 */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 响应式布局：自动分栏 */
+    gap: 20px; /* 卡片之间的间距 */
+}
+
+/* 列表项：将其设计为卡片风格 */
+li {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 过渡动画 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 悬停卡片时的效果 */
+li:hover {
+    transform: translateY(-5px); /* 向上轻微浮动 */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* 应用名称链接样式 */
+li a {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #3498db;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+li a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+/* 描述文本样式 */
+li span {
+    font-size: 0.95rem;
+    color: #666;
+    display: block;
+}
+
+/* 下载提示的小修饰（可选） */
+li a::after {
+    content: " ⬇️"; /* 在链接后添加下载图标感 */
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
+
+/* 搜索栏外层容器：负责居中和间距 */
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 40px 0; /* 距离页眉和下方列表的间距 */
+}
+
+/* 表单内部布局 */
+form.search {
+    display: flex;
+    width: 100%;
+    max-width: 600px; /* 限制搜索栏最大宽度 */
+    gap: 10px; /* 输入框和按钮之间的间距 */
+}
+
+/* 搜索输入框样式 */
+form.search input[type="text"] {
+    flex: 1; /* 自动撑满剩余空间 */
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px; /* 圆角设计 */
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 输入框聚焦时的效果 */
+form.search input[type="text"]:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+/* 搜索按钮样式 */
+form.search button {
+    padding: 12px 30px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 按钮悬停及点击效果 */
+form.search button:hover {
+    background-color: #2980b9;
+}
+
+form.search button:active {
+    transform: scale(0.95); /* 点击时微弱的缩放反馈 */
+}

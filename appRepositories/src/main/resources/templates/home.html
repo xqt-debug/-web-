@@ -4,14 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>AppRepostories</title>
+    <link rel="stylesheet" th:href="@{/style/homeStyle.css}" type="text/css">
 </head>
 <body>
     <div class = "header">
         <h1>AppRepositories</h1>
     </div>
+    <div class = "search-container">
+        <form th:action="@{/search}" method="get" class="search">
+            <input type="text" name="searchName" placeholder="Search for apps...">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <ul>
-        <li th:each="app:${apps}"><a th:href="${app.url}" th:text="${app.name}" th:download="${app.name}">Repositories</a></li>
+        <li th:each="app:${apps}"><a th:href="${app.url}" th:text="${app.name}" th:download="${app.name}">Repositories</a>
+        <span th:text="${app.description}"></span>
+        </li>
     </ul>
-
 </body>
 </html>
