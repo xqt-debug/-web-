@@ -1,5 +1,12 @@
 delete from App;
 insert into App (name, description) values ('test.txt', '测试应用');
 insert into App (name, description) values ('PCL 正式版 2.12.2.zip', 'PCL 正式版 2.12.2, Minecraft启动器');
-insert into App (name, description) values ('App1', 'Description for App1');
-insert into App (name, description) values ('App2', 'Description for App2');
+insert into App (name, description) values ('你好，新蒸程！V1.2正式版.zip', 'Minecraft整合包');
+insert into App (name, description) values ('你好，新世代！S0.1.1.zip', 'Minecraft整合包');
+insert into App (name, description) values ('Above and Beyond-1.3.zip', 'Minecraft整合包');
+insert into App (name, description) values ('CABR-1.0.2d.zip', 'Minecraft整合包');
+insert into App (name, description) values ('The Legend of Tinker-1.3.1b.zip', 'Minecraft整合包');
+insert into App (name, description) values ('jdk-21_windows-x64_bin.exe', 'Java开发工具包');
+insert into App (name, description) values ('spring-in-action-6-samples-main.zip', '书籍配套代码');
+insert into App (name, description) values ('WeChatWin_4.1.7.exe', '微信电脑版');
+insert into App (name, description) values ('VSCodeUserSetup-x64-1.109.5.exe', 'Visual Studio Code');

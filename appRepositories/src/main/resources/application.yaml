@@ -2,4 +2,5 @@ spring:
   application:
     name: appRepositories
   repolocation:
+#    url: /home/xqt/Apps/web-repositories/appRepositories
     url: D:/java files/-web-/appRepositories/storage/

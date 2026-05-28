@@ -39,8 +39,7 @@ public class JdbcAppRepository {
         String searchName = "%"+name+"%";
         return jdbcTemplate.query(
                 "select id, name, description from App where name ILIKE ? " +
-                        "OR SOUNDEX(name) = SOUNDEX(?)" +
-                        "OR DIFFERENCE(name, ?) >= 2",
+                        "OR description ILIKE ?",
                 (rs, rowNum) -> {
                     return new App(
                             rs.getLong("id"),
@@ -49,7 +48,7 @@ public class JdbcAppRepository {
                             "/download/"+rs.getString("name")
                     );
                 },
-                searchName, searchName, searchName
+                searchName, searchName
         );
     }
 }
