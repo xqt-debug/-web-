@@ -47,6 +47,9 @@ mvn clean install
 mvn spring-boot:run  # 如果使用Spring Boot
 ```
 
+4. 访问Web界面
+在浏览器中打开：`http://localhost:8080`
+
 ## 项目结构
 
 ```
