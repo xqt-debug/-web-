@@ -32,7 +32,7 @@
 1. 克隆仓库
 ```bash
 git clone https://github.com/xqt-debug/-web-.git
-cd -web-
+cd -web-/AppRepositories
 ```
 
 2. 构建项目
